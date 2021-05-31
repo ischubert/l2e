@@ -5,7 +5,22 @@ Code base for reproducing results of
 [_Anonymous Authors_: **Learning to Execute: Efficient Learning of Universal Plan-Conditioned Policies in Robotics** (2021)](https://openreview.net/pdf?id=lEkPb2Rhm7)
 
 ## Installation
-TODO
+### Install `rai-python`
+For `rai-python`, it is recommended to use [this docker image](https://github.com/ischubert/rai-python/packages/).
+
+If you want to install manually `rai-python`, follow instructions [here](https://github.com/MarcToussaint/rai-python). You will also need to install PhysX from source following [these instructions](https://github.com/MarcToussaint/rai-maintenance/blob/master/help/localSourceInstalls.md#PhysX).
+
+### Install gym-physx
+```bash
+cd gym-physx
+pip install .
+```
+
+### Install our fork of stable-baselines3
+```bash
+cd stable-baselines3
+pip install .
+```
 
 ## Reproduce figures
 `l2e/l2e/` contains code to reproduce the reults in the paper.
@@ -59,5 +74,3 @@ Step-by-step instructions to reproduce figures:
    python plot_results.py
    ```
    Figures are saved in `l2e/figs/` (configure in `plot_results.json`)
-
-
