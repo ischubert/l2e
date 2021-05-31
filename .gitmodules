@@ -1,0 +1,9 @@
+[submodule "gym-physx"]
+	path = gym-physx
+	url = git@github.com:ischubert/gym-physx.git
+[submodule "rai-python"]
+	path = rai-python
+	url = git@github.com:ischubert/rai-python.git
+[submodule "stable-baselines3"]
+	path = stable-baselines3
+	url = git@github.com:ischubert/stable-baselines3.git
