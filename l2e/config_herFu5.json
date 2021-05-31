@@ -18,6 +18,7 @@
         "sigma": 0.1
     },
     "action_uncertainty": 0.1,
+    "drift": true,
     "config_files": "pushing",
     "fixed_initial_config": null,
     "fixed_finger_initial_position": true,

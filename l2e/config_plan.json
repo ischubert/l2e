@@ -8,6 +8,7 @@
     "shaping_function_width": 0.5,
     "max_episode_steps": 250,
     "action_uncertainty": 0.1,
+    "drift": true,
     "config_files": "pushing",
     "fixed_initial_config": null,
     "fixed_finger_initial_position": true,
