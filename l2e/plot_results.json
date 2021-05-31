@@ -1,0 +1,131 @@
+{
+    "direct_comparisons": {
+        "plot_ids": {
+            "pushing_l2e_vs_baselines": {
+                "comparisons": [
+                    {
+                        "legend": "Plan",
+                        "CONFIG_ID": "plan",
+                        "style": ""
+                    },
+                    {
+                        "legend": "Plan + IM",
+                        "CONFIG_ID": "planIM",
+                        "style": ""
+                    },
+                    {
+                        "legend": "HER Fu 5",
+                        "CONFIG_ID": "herFu5",
+                        "style": ""
+                    },
+                    {
+                        "legend": "HER Ep 5",
+                        "CONFIG_ID": "herEp5",
+                        "style": ""
+                    },
+                    {
+                        "legend": "L2E $S^\\mathrm{bias}_{100, 1000}$",
+                        "CONFIG_ID": "l2e-100-1000",
+                        "style": ""
+                    },
+                    {
+                        "legend": "L2E $S^\\mathrm{bias}_{10, 1000}$",
+                        "CONFIG_ID": "l2e-10-1000",
+                        "style": ""
+                    }
+                ],
+                "style": {
+                    "x_axis": false,
+                    "y_axis": false,
+                    "legend-loc": "best",
+                    "figsize": [5.33, 4],
+                    "ncol": 2,
+                    "x_max": 6000000
+                },
+                "save": true
+            },
+            "pushing_her_strategies": {
+                "comparisons": [
+                    {
+                        "legend": "HER Ep 1",
+                        "CONFIG_ID": "herEp1",
+                        "style": "",
+                        "fillna": true
+                    },
+                    {
+                        "legend": "HER Ep 5",
+                        "CONFIG_ID": "herEp5",
+                        "style": ""
+                    },
+                    {
+                        "legend": "HER Ep 10",
+                        "CONFIG_ID": "herEp10",
+                        "style": "",
+                        "fillna": true
+                    },
+                    {
+                        "legend": "HER Fu 5",
+                        "CONFIG_ID": "herFu5",
+                        "style": ""
+                    },
+                    {
+                        "legend": "HER Fi",
+                        "CONFIG_ID": "herFi",
+                        "style": ""
+                    }
+                ],
+                "style": {
+                    "legend-loc": "upper left",
+                    "figsize": [5.33, 4],
+                    "ncol": 2,
+                    "x_max": 6000000
+                },
+                "save": true
+            },
+            "pushing_l2e_strategies": {
+                "comparisons": [
+                    {
+                        "legend": "L2E $S^\\mathrm{bias}_{1, 1000}$",
+                        "CONFIG_ID": "l2e-1-1000",
+                        "style": ""
+                    },
+                    {
+                        "legend": "L2E $S^\\mathrm{bias}_{10, 1000}$",
+                        "CONFIG_ID": "l2e-10-1000",
+                        "style": ""
+                    },
+                    {
+                        "legend": "L2E $S^\\mathrm{bias}_{100, 1000}$",
+                        "CONFIG_ID": "l2e-100-1000",
+                        "style": ""
+                    },
+                    {
+                        "legend": "L2E $S^\\mathrm{bias}_{10, 100}$",
+                        "CONFIG_ID": "l2e-10-100",
+                        "style": ""
+                    },
+                    {
+                        "legend": "L2E $S^\\mathrm{bias}_{10, 10000}$",
+                        "CONFIG_ID": "l2e-10-10000",
+                        "style": ""
+                    },
+                    {
+                        "legend": "L2E $S^\\mathrm{uni}_{1000}$",
+                        "CONFIG_ID": "l2e-uni-1000",
+                        "style": ""
+                    }
+                ],
+                "style": {
+                    "legend-loc": "best",
+                    "figsize": [5.33, 4],
+                    "x_max": 6000000,
+                    "ncol": 2,
+                    "y_axis": false
+                },
+                "save": true
+            }
+        }
+    },
+    "save_dir": "../figs",
+    "scratch_root": "/scratch/l2e"
+}
