@@ -200,7 +200,7 @@ for plot_id in plot_ids:
         )
     if plots["direct_comparisons"]["plot_ids"][plot_id]["save"]:
         plt.savefig(
-            os.path.join('../tex/figs', plot_id + '_confidence.pdf'),
+            os.path.join(plots["save_dir"], plot_id + '_confidence.pdf'),
             dpi=300, bbox_inches='tight'
         )
     plt.show()

@@ -36,12 +36,12 @@ Step-by-step instructions to reproduce figures:
 
 1. Depending on experiment, use the following train scripts:
 
-   1. **For the RL runs (`\$EXPERIMENT` $\in \{...\}$)**
+   1. **For the RL runs (`$EXPERIMENT` $\in \{$`herEp1`, `herEp5`, `herEp10`, `herFi`, `herFu5`, `l2e-1-1000`, `l2e-10-100`, `l2e-10-1000`, `l2e-10-10000`, `l2e-100-1000`, `l2e-uni-1000`$\}$)**
       ```bash
       ./train.sh $EXPERIMENT
       ```
 
-   2. **For the Inverse Model runs (`\$EXPERIMENT` $\in \{...\}$)**
+   2. **For the Inverse Model runs (`$EXPERIMENT` $\in \{$`planIM`$\}$)**
 
       First collect data:
       ```bash
@@ -52,7 +52,7 @@ Step-by-step instructions to reproduce figures:
       ./imitation_learning.sh $EXPERIMENT
       ```
 
-   3. **For the Direct Execution runs (`\$EXPERIMENT` $\in \{...\}$)**
+   3. **For the Direct Execution runs (`$EXPERIMENT` $\in \{$`plan`$\}$)**
    
       No training stage is needed here.
  
