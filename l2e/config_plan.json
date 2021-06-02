@@ -23,5 +23,6 @@
     "EVAL_TIME": "20:00:00",
     "EVAL_PARTITION": "standard",
     "plan_length": 50,
-    "plan_dim": 6
+    "plan_dim": 6,
+    "exec_style": "closed_loop"
 }
