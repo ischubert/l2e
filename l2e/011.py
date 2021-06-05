@@ -52,7 +52,7 @@ for worker_id in np.arange(config["n_data_collect_workers"]) + 1:
 
 # check that the files are as expected
 for filepath in filepaths:
-    print(f"Loading batch of plans from {filename}")
+    print(f"Loading batch of plans from {filepath}")
     with open(filepath, 'rb') as data_file:
         [states, next_states, actions] = pickle.load(data_file)
         assert states.shape == (expected_records_per_file, 10)
