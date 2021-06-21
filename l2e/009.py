@@ -182,10 +182,7 @@ else:
 
 if config['fixed_initial_config'] is None:
     print("Multi-Plan RL")
-    model = HER(
-        config['policy'],
-        env,
-        ModelClass,
+    kwargs = dict(
         goal_selection_strategy=config["goal_selection_strategy"],
         n_sampled_goal=config['n_sampled_goals'],
         n_sampled_goal_preselection=config['n_sampled_goal_preselection'],
@@ -194,8 +191,16 @@ if config['fixed_initial_config'] is None:
         device=device,
         action_noise=action_noise,
         policy_kwargs=config["policy_kwargs"],
-        gamma=config["gamma"],
-        use_sde=config["use_sde"],
+        gamma=config["gamma"]
+    )
+    if not (config['model_class'] == 'DDPG' or config['model_class'] == 'TD3'):
+        kwargs["use_sde"] = config["use_sde"]
+
+    model = HER(
+        config['policy'],
+        env,
+        ModelClass,
+        **kwargs
     )
 else:
     print("Single-Plan RL")
