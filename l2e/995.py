@@ -52,6 +52,7 @@ env = gym.make(
     plan_based_shaping=PlanBasedShaping(
         shaping_mode=config["shaping_mode"],
         width=config["shaping_function_width"],
+        potential_function=config["potential_function"],
         relaxed_offset=config["relaxed_offset"] if "relaxed_offset" in config else None,
         relaxed_scaling=config["relaxed_scaling"] if "relaxed_scaling" in config else None
     ),

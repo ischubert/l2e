@@ -12,6 +12,7 @@
     "GPU": "",
     "shaping_mode": null,
     "shaping_function_width": null,
+    "potential_function": null,
     "max_episode_steps": 250,
     "action_noise": {
         "type": "NormalActionNoise",
