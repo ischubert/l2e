@@ -1,5 +1,5 @@
 {
-    "description": "HER Inverse Model Plan Execution",
+    "description": "Inverse Model Plan Execution",
     "scratch_root": "/scratch/l2e/",
     "file_string_digits": 10,
     "EVAL_SCRIPT_ID": "995",
