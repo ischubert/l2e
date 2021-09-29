@@ -2,7 +2,8 @@
 
 Code base for reproducing results of
 
-[_Anonymous Authors_: **Learning to Execute: Efficient Learning of Universal Plan-Conditioned Policies in Robotics** (2021)](https://openreview.net/pdf?id=lEkPb2Rhm7)
+[_I.Schubert, D.Driess, O.Oguz, and
+M.Toussaint_: **Learning to Execute: Efficient Learning of Universal Plan-Conditioned Policies in Robotics**. NeurIPS (2021)](https://openreview.net/pdf?id=lEkPb2Rhm7)
 
 ## Installation
 Initialize submodules:
