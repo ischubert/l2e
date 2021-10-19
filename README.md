@@ -15,7 +15,7 @@ git submodule update
 ### Install `rai-python`
 For `rai-python`, it is recommended to use [this docker image](https://github.com/ischubert/rai-python/packages/).
 
-If you want to install `rai-python` manally, follow instructions [here](https://github.com/MarcToussaint/rai-python).
+If you want to install `rai-python` manually, follow instructions [here](https://github.com/MarcToussaint/rai-python).
 You will also need to install PhysX, ideally following [these instructions](https://github.com/MarcToussaint/rai-maintenance/blob/master/help/localSourceInstalls.md#PhysX).
 
 ### Install gym-physx
