@@ -42,23 +42,23 @@ pip install .
 ## Reproduce figures
 `l2e/l2e/` contains code to reproduce the reults in the paper.
 
-_Figures_ consist of multiple _experiments_ and are configured in `plot_results.json`.
+_Figures_ consist of multiple _experiments_ and are defined in `plot_results.json`.
 
-_Experiments_ are configured in `config_$EXPERIMENT.json`.
+_Experiments_ are defined in `config_$EXPERIMENT.json`.
 
-Intermediate and final results are saved to `$scratch_root/$EXPERIMENT/`
+Intermediate and final results are saved to `$scratch_root/$EXPERIMENT/` (configure `$scratch_root` in each `config_$EXPERIMENT.json` as well as in `plot_results.json`).
 
 
 Step-by-step instructions to reproduce figures:
 
 1. Depending on experiment, use the following train scripts:
 
-   1. **For the RL runs (`$EXPERIMENT` $\in \{$`herEp1`, `herEp5`, `herEp10`, `herFi`, `herFu5`, `l2e-1-1000`, `l2e-10-100`, `l2e-10-1000`, `l2e-10-10000`, `l2e-100-1000`, `l2e-uni-1000`$\}$)**
+   1. **For the RL runs (`$EXPERIMENT`=`l2e*` and `$EXPERIMENT`=`her*`)**
       ```bash
       ./train.sh $EXPERIMENT
       ```
 
-   2. **For the Inverse Model runs (`$EXPERIMENT` $\in \{$`planIM`$\}$)**
+   2. **For the Inverse Model runs (`$EXPERIMENT`=`im_plan_basic` and $EXPERIMENT=`im_plan_obstacle_training`)**
 
       First collect data:
       ```bash
@@ -69,20 +69,19 @@ Step-by-step instructions to reproduce figures:
       ./imitation_learning.sh $EXPERIMENT
       ```
 
-   3. **For the Direct Execution runs (`$EXPERIMENT` $\in \{$`plan`$\}$)**
+   3. **For the Direct Execution runs (`$EXPERIMENT`=`plan_basic` and $EXPERIMENT=`plan_obstacle`)**
    
       No training stage is needed here.
  
-2. Evaluate results 
-   ```bash
-   ./evaluate.sh $EXPERIMENT
-   ```
-
    `./train.sh $EXPERIMENT` will launch multiple screens with multiple independent runs of `$EXPERIMENT`. The number of runs is configured using `$AGENTS_MIN` and `$AGENTS_MAX` in `config_$EXPERIMENT.json`.
 
    `./imitation_data.sh` will launch `$n_data_collect_workers` workers for collecting data, and `./imitation_learning.sh` will launch `$n_training_workers` runs training models independently.
 
-   `python evaluate.py $EXPERIMENT` will launch multiple screens, one for each independent agent. `python evaluate.py $EXPERIMENT` will automatically scan for new training output, and only evaluate models that haven't been evaluated yet.
+2. Evaluate results 
+   ```bash
+   ./evaluate.sh $EXPERIMENT
+   ```
+   `python evaluate.py $EXPERIMENT` will launch multiple screens, one for each agent that was trained in step 1. `python evaluate.py $EXPERIMENT` will automatically scan for new training output, and only evaluate model checkpoints that haven't been evaluated yet.
 
 3. Plot results
    

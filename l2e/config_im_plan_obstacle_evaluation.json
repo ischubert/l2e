@@ -1,8 +1,8 @@
 {
     "description": "Obstacle Pushing: Inverse Model Plan Execution - Evaluation",
-    "scratch_root": "/scratch/ischubert/plan_conditioned_learning/",
+    "scratch_root": "/scratch/l2e/",
     "file_string_digits": 10,
-    "original_config_id": "246",
+    "original_config_id": "im_plan_obstacle_training",
     "EVAL_SCRIPT_ID": "995",
     "AGENTS_MIN": 1,
     "AGENTS_MAX": 10,

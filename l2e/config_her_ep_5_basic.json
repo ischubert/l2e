@@ -1,6 +1,6 @@
 {
-    "description": "Basic Pushing: HER Fi 5",
-    "scratch_root": "/scratch/ischubert/plan_conditioned_learning/",
+    "description": "Basic Pushing: HER Ep 5",
+    "scratch_root": "/scratch/l2e/",
     "file_string_digits": 10,
     "SCRIPT_ID": "009",
     "AGENTS_MIN": 1,
@@ -12,12 +12,14 @@
     "GPU": "",
     "shaping_mode": null,
     "shaping_function_width": null,
+    "potential_function": "gaussian",
     "max_episode_steps": 250,
     "action_noise": {
         "type": "NormalActionNoise",
         "sigma": 0.1
     },
     "action_uncertainty": 0.1,
+    "drift": true,
     "config_files": "pushing",
     "fixed_initial_config": null,
     "fixed_finger_initial_position": true,
@@ -41,7 +43,7 @@
     "total_timesteps": 10000000,
     "save_interval": 50000,
     "pickup_checkpoint": false,
-    "goal_selection_strategy": "final",
+    "goal_selection_strategy": "episode",
     "plan_length": 50,
     "plan_dim": 6,
     "eval_epochs": 30,

@@ -1,6 +1,6 @@
 {
     "description": "2D maze world with moving obstacles: L2E",
-    "scratch_root": "/scratch/ischubert/plan_conditioned_learning/",
+    "scratch_root": "/scratch/l2e/",
     "file_string_digits": 10,
     "SCRIPT_ID": "012",
     "AGENTS_MIN": 1,

@@ -1,6 +1,6 @@
 {
-    "description": "Basic Pushing: HER Fu 1",
-    "scratch_root": "/scratch/ischubert/plan_conditioned_learning/",
+    "description": "Basic Pushing: HER Fu 5",
+    "scratch_root": "/scratch/l2e/",
     "file_string_digits": 10,
     "SCRIPT_ID": "009",
     "AGENTS_MIN": 1,
@@ -18,7 +18,6 @@
         "sigma": 0.1
     },
     "action_uncertainty": 0.1,
-    "drift": true,
     "config_files": "pushing",
     "fixed_initial_config": null,
     "fixed_finger_initial_position": true,
@@ -36,7 +35,7 @@
     },
     "gamma": 0.9,
     "model_class": "SAC",
-    "n_sampled_goals": 1,
+    "n_sampled_goals": 5,
     "n_sampled_goal_preselection": null,
     "use_sde": true,
     "total_timesteps": 10000000,

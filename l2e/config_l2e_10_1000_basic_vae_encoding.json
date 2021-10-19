@@ -1,6 +1,6 @@
 {
-    "description": "Basic Pushing: L2E S^uni_1000",
-    "scratch_root": "/scratch/ischubert/plan_conditioned_learning/",
+    "description": "Basic Pushing: L2E S^biased_10_1000 VAE encoding",
+    "scratch_root": "/scratch/l2e/",
     "file_string_digits": 10,
     "SCRIPT_ID": "009",
     "AGENTS_MIN": 1,
@@ -12,6 +12,8 @@
     "GPU": "",
     "shaping_mode": "relaxed",
     "shaping_function_width": 0.5,
+    "potential_function": "gaussian",
+    "drift": true,
     "max_episode_steps": 250,
     "action_noise": {
         "type": "NormalActionNoise",
@@ -23,8 +25,13 @@
     "fixed_finger_initial_position": true,
     "plans_from_disk": null,
     "plan_encoding": {
-        "config_encoding": true,
-        "vae_encoding": null,
+        "config_encoding": null,
+        "vae_encoding": {
+            "VAE_BASE_CONFIG_ID": "224",
+            "ENCODER_CONFIG": "1",
+            "VAE_WORKER": "10",
+            "VAE_EPOCH": "7"
+        },
         "reward_model_encoding": null
     },
     "learning_starts": 5e3,
@@ -39,13 +46,13 @@
     },
     "gamma": 0.9,
     "model_class": "SAC",
-    "n_sampled_goals": 1000,
-    "n_sampled_goal_preselection": null,
+    "n_sampled_goals": 10,
+    "n_sampled_goal_preselection": 1000,
     "use_sde": true,
     "total_timesteps": 10000000,
     "save_interval": 50000,
     "pickup_checkpoint": false,
-    "goal_selection_strategy": "past_desired",
+    "goal_selection_strategy": "past_desired_success",
     "eval_epochs": 30,
     "eval_deterministic": true,
     "EVAL_SCRIPT_ID": "997",
@@ -77,7 +84,7 @@
     "ENCODER_EVAL_GPU": "",
     "ENCODER_EVAL_TIME": "10:00:00",
     "ENCODER_EVAL_PARTITION": "standard",
-    "encoder_training_workers": 5,
+    "encoder_training_workers": 10,
     "encoder_configs": {
         "1":{
             "vae_training_n_epochs": 10,

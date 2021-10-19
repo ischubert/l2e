@@ -1,6 +1,6 @@
 {
     "description": "Basic Pushing: L2E S^biased_10_10000",
-    "scratch_root": "/scratch/ischubert/plan_conditioned_learning/",
+    "scratch_root": "/scratch/l2e/",
     "file_string_digits": 10,
     "SCRIPT_ID": "009",
     "AGENTS_MIN": 1,

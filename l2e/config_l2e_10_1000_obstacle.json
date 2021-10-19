@@ -1,6 +1,6 @@
 {
-    "description": "Obstacle Pushing: L2E S^biased_100_1000",
-    "scratch_root": "/scratch/ischubert/plan_conditioned_learning/",
+    "description": "Obstacle Pushing: L2E S^biased_10_1000",
+    "scratch_root": "/scratch/l2e/",
     "file_string_digits": 10,
     "SCRIPT_ID": "009",
     "AGENTS_MIN": 1,
@@ -41,7 +41,7 @@
     },
     "gamma": 0.9,
     "model_class": "SAC",
-    "n_sampled_goals": 100,
+    "n_sampled_goals": 10,
     "n_sampled_goal_preselection": 1000,
     "use_sde": true,
     "total_timesteps": 100000000,
