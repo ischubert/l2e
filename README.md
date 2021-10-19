@@ -1,6 +1,6 @@
 # Learning to Execute (L2E)
 
-Code base for reproducing results of
+Official code base for completely reproducing all results reported in
 
 [_I.Schubert, D.Driess, O.Oguz, and
 M.Toussaint_: **Learning to Execute: Efficient Learning of Universal Plan-Conditioned Policies in Robotics**. NeurIPS (2021)](https://openreview.net/pdf?id=lEkPb2Rhm7)
@@ -85,8 +85,8 @@ Step-by-step instructions to reproduce figures:
 
 3. Plot results
    
-   After all experiments are finished, create all plots using
+   After all experiments are finished, create plots using
    ```bash
    python plot_results.py
    ```
-   Figures are saved in `l2e/figs/` (configure in `plot_results.json`)
+   This will create all data figures contained in the paper. Figures are saved in `l2e/figs/` (configure in `plot_results.json`)
