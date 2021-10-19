@@ -12,6 +12,8 @@
     "GPU": "",
     "shaping_mode": "relaxed",
     "shaping_function_width": 0.5,
+    "potential_function": "gaussian",
+    "drift": true,
     "max_episode_steps": 250,
     "action_noise": {
         "type": "NormalActionNoise",

@@ -13,13 +13,13 @@
     "shaping_mode": "relaxed",
     "shaping_function_width": 0.5,
     "potential_function": "gaussian",
+    "drift": false,
     "max_episode_steps": 250,
     "action_noise": {
         "type": "NormalActionNoise",
         "sigma": 0.1
     },
     "action_uncertainty": 0.5,
-    "drift": false,
     "config_files": "pushing_obstacle_large",
     "fixed_initial_config": null,
     "fixed_finger_initial_position": true,
