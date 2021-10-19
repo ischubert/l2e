@@ -19,8 +19,17 @@ If you want to install `rai-python` manally, follow instructions [here](https://
 You will also need to install PhysX, ideally following [these instructions](https://github.com/MarcToussaint/rai-maintenance/blob/master/help/localSourceInstalls.md#PhysX).
 
 ### Install gym-physx
+Modify the path to `rai-python/rai/rai/ry` in `gym-physx/gym_physx/envs/physx_pushing_env.py` depending on your installation.
+Then install `gym-physx` using pip:
 ```bash
 cd gym-physx
+pip install .
+```
+
+### Install gym-obstacles
+In case you also want to run the 2D maze example with moving obstacles as introduced in section A.3, install `gym-obstacles`:
+```bash
+cd gym-obstacles
 pip install .
 ```
 

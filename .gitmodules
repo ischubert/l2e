@@ -7,3 +7,6 @@
 [submodule "stable-baselines3"]
 	path = stable-baselines3
 	url = git@github.com:ischubert/stable-baselines3.git
+[submodule "gym-obstacles"]
+	path = gym-obstacles
+	url = git@github.com:ischubert/gym-obstacles.git
