@@ -1,6 +1,6 @@
 # %%
 """
-Evaluations script for gym implementation
+Evaluations for L2E and HER
 """
 import os
 import json
@@ -15,6 +15,8 @@ from stable_baselines3 import HER, DDPG, SAC, TD3, PPO
 from gym_physx.envs.shaping import PlanBasedShaping
 from gym_physx.wrappers import DesiredGoalEncoder
 from gym_physx.encoders import ConfigEncoder
+
+from models import VanillaVAE, VaeEncoder
 
 # %%
 # parameters
@@ -68,7 +70,62 @@ if config['plan_encoding'] is not None:
         'fixed_initial_config'
     ] is None, "plan encoding can only be used for plan-conditioned policy"
 
-    if config['plan_encoding']["config_encoding"] is not None:
+    if config['plan_encoding']["vae_encoding"] is not None:
+        assert config['plan_encoding']["config_encoding"
+        ] is None, "Both vae_encoding and config_encoding given"
+        assert config['plan_encoding']["reward_model_encoding"
+        ] is None, "Both vae_encoding and reward_model_encoding given"
+        # I am so sorry
+        encoding_config = config['plan_encoding']["vae_encoding"]
+        with open("config_" + encoding_config["VAE_BASE_CONFIG_ID"] + ".json", 'r') as config_data:
+            vae_base_config = json.load(config_data)
+        vae_config = vae_base_config["encoder_configs"][encoding_config["ENCODER_CONFIG"]]
+        vae_scratch_dir = os.path.join(
+            vae_base_config["scratch_root"],
+            encoding_config["VAE_BASE_CONFIG_ID"]
+        )
+        print(f'Loading VAE from: {vae_scratch_dir}')
+
+        vae = VanillaVAE(
+            vae_base_config["plan_length"]*vae_base_config["plan_dim"],
+            vae_config["vae_bottleneck_dim"],
+            vae_config["vae_layer_dims"],
+            vae_config["vae_log_std_clips"],
+            torch.device("cpu")
+        ).to(torch.device("cpu"))
+        PATH = os.path.join(
+            vae_scratch_dir,
+            'vae_training_config_' + encoding_config[
+                "ENCODER_CONFIG"
+            ].zfill(
+                vae_base_config["file_string_digits"]
+            ) + '_worker_' + encoding_config[
+                "VAE_WORKER"
+            ].zfill(
+                vae_base_config["file_string_digits"]
+            ) + "_epoch_" + encoding_config[
+                "VAE_EPOCH"
+            ].zfill(
+                vae_base_config["file_string_digits"]
+            ) + '.model'
+        )
+        vae.load_state_dict(torch.load(PATH, map_location=torch.device("cpu")))
+        encoder = VaeEncoder(vae, torch.device("cpu"))
+
+    elif config['plan_encoding']["reward_model_encoding"] is not None:
+        assert config['plan_encoding']["vae_encoding"
+        ] is None, "Both vae_encoding and reward_model_encoding given"
+        assert config['plan_encoding']["config_encoding"
+        ] is None, "Both reward_model_encoding and config_encoding given"
+        raise NotImplementedError
+
+    elif config['plan_encoding']["config_encoding"] is not None:
+        assert config['plan_encoding']["reward_model_encoding"
+        ] is None, "Both reward_model_encoding and config_encoding given"
+        assert config['plan_encoding']["vae_encoding"
+        ] is None, "Both vae_encoding and config_encoding given"
+
+        assert config['plan_encoding']["config_encoding"]
         encoder = ConfigEncoder(
             env.box_xy_min, env.box_xy_max,
             env.plan_length, env.dim_plan,

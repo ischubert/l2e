@@ -68,6 +68,21 @@ batch_indices = np.arange((
 
 # only use a subset of the files for each training step
 for file_stop in np.arange(len(filepaths), step=config["file_steps"]) + config["file_steps"]:
+    PATH = os.path.join(
+        scratch_dir,
+        "inverse_model_traning_run_" + os.environ["SLURM_ARRAY_TASK_ID"].zfill(
+            config["file_string_digits"]
+        ) + "_file_stop_" + str(file_stop).zfill(
+            config["file_string_digits"]
+        )
+    )
+
+    if os.path.isfile(PATH):
+        # don't load and evaluate model if this has been done already
+        print(f"{PATH} has already been trained")
+        continue
+
+
     filepaths_now = filepaths[:file_stop]
     np.random.shuffle(filepaths_now)
 
@@ -102,14 +117,6 @@ for file_stop in np.arange(len(filepaths), step=config["file_steps"]) + config["
             mean_loss = mean_loss / len(batch_indices) * config["imitation_batch_size"]
             print(f"File stop {file_stop} file {ind_file} epoch {epoch}: Mean loss {mean_loss}")
 
-    PATH = os.path.join(
-        scratch_dir,
-        "inverse_model_traning_run_" + os.environ["SLURM_ARRAY_TASK_ID"].zfill(
-            config["file_string_digits"]
-        ) + "_file_stop_" + str(file_stop).zfill(
-            config["file_string_digits"]
-        )
-    )
     torch.save(model.state_dict(), PATH)
 
 # %%

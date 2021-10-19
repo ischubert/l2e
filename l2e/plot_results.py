@@ -31,11 +31,9 @@ def read_in_results(config_id):
         timesteps_temp = np.array([None])
     # for 995, the time step axis is specified in a slightly different format
     elif element_config["EVAL_SCRIPT_ID"] == "995":
-        # potentially overwrite if "original_config_id" is given
+        # potentially overwrite
         if "original_config_id" in element_config:
-            with open(
-                    "config_" + element_config["original_config_id"] + ".json", 'r'
-            ) as config_data_in:
+            with open("config_" + element_config["original_config_id"] + ".json", 'r') as config_data_in:
                 element_config = json.load(config_data_in)
         n_files_total = element_config["n_rollouts_total"]/element_config["n_data_collect_workers"]
         timesteps_temp = (np.arange(
@@ -103,9 +101,12 @@ def np_ffill(arr, axis):
     idx = np.where(~np.isnan(arr), np.arange(arr.shape[axis])[idx_shape], 0)
     np.maximum.accumulate(idx, axis=axis, out=idx)
     slc = [
-        np.arange(k)[tuple([
-            slice(None) if dim == i else np.newaxis for dim in range(len(arr.shape))
-        ])]
+        np.arange(k)[
+            tuple([
+                slice(None) if dim==i else np.newaxis
+                for dim in range(len(arr.shape))
+            ])
+        ]
         for i, k in enumerate(arr.shape)
     ]
     slc[axis] = idx
@@ -191,7 +192,7 @@ for plot_id in plot_ids:
     if not "x_axis" in style.keys():
         plt.xlabel("Number of experienced transitions $N$")
     if not "y_axis" in style.keys():
-        plt.ylabel("Average Success Rate $\sum_{am} \mathcal{F}^{(q)}_{am}(N)$")
+        plt.ylabel("Success Rate Averaged over Agents\nand Initial Configurations")
 
     if not "legend" in style.keys():
         plt.legend(

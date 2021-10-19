@@ -1,6 +1,6 @@
 {
-    "description": "HER Episode 10",
-    "scratch_root": "/scratch/l2e/",
+    "description": "Basic Pushing: HER Ep 10",
+    "scratch_root": "/scratch/ischubert/plan_conditioned_learning/",
     "file_string_digits": 10,
     "SCRIPT_ID": "009",
     "AGENTS_MIN": 1,
@@ -12,14 +12,12 @@
     "GPU": "",
     "shaping_mode": null,
     "shaping_function_width": null,
-    "potential_function": "gaussian",
     "max_episode_steps": 250,
     "action_noise": {
         "type": "NormalActionNoise",
         "sigma": 0.1
     },
     "action_uncertainty": 0.1,
-    "drift": true,
     "config_files": "pushing",
     "fixed_initial_config": null,
     "fixed_finger_initial_position": true,

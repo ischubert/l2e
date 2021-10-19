@@ -21,5 +21,5 @@ do
     num_cpus=$(getconf _NPROCESSORS_ONLN)
     cpu_now=$(echo $(($RANDOM % $num_cpus)))
     CUDA_VISIBLE_DEVICES=$LEAST_BUSY_GPU taskset -c $cpu_now screen -dmS $IMITATION_LEARNING_SCRIPT_ID.$CONFIG_ID.$SLURM_ARRAY_TASK_ID -L -Logfile $OUTFILE python $IMITATION_LEARNING_SCRIPT_ID.py
-    sleep 60
+    sleep 20
 done

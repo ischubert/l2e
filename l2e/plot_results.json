@@ -1,42 +1,45 @@
 {
     "direct_comparisons": {
         "plot_ids": {
-            "pushing_l2e_vs_baselines": {
+            "figure1b": {
                 "comparisons": [
                     {
-                        "legend": "Plan",
-                        "CONFIG_ID": "plan",
-                        "style": ""
-                    },
-                    {
-                        "legend": "Plan + IM",
-                        "CONFIG_ID": "planIM",
-                        "style": ""
-                    },
-                    {
-                        "legend": "HER Fu 5",
-                        "CONFIG_ID": "herFu5",
-                        "style": ""
-                    },
-                    {
-                        "legend": "HER Ep 5",
-                        "CONFIG_ID": "herEp5",
-                        "style": ""
-                    },
-                    {
                         "legend": "L2E $S^\\mathrm{bias}_{100, 1000}$",
-                        "CONFIG_ID": "l2e-100-1000",
+                        "CONFIG_ID": "133",
                         "style": ""
                     },
                     {
                         "legend": "L2E $S^\\mathrm{bias}_{10, 1000}$",
-                        "CONFIG_ID": "l2e-10-1000",
+                        "CONFIG_ID": "124",
+                        "style": ""
+                    },
+                    {
+                        "legend": "HER Fu 1",
+                        "CONFIG_ID": "149",
+                        "style": ""
+                    },
+                    {
+                        "legend": "HER Ep 1",
+                        "CONFIG_ID": "127",
+                        "style": ""
+                    },
+                    {
+                        "legend": "Plan",
+                        "CONFIG_ID": "119",
+                        "style": ""
+                    },
+                    {
+                        "legend": "Plan + IM",
+                        "CONFIG_ID": "196",
+                        "style": ""
+                    },
+                    {
+                        "legend": "Planned Subgoals + RL",
+                        "CONFIG_ID": "252",
                         "style": ""
                     }
                 ],
                 "style": {
-                    "x_axis": false,
-                    "y_axis": false,
                     "legend-loc": "best",
                     "figsize": [5.33, 4],
                     "ncol": 2,
@@ -44,33 +47,107 @@
                 },
                 "save": true
             },
-            "pushing_her_strategies": {
+            "figure1d": {
                 "comparisons": [
                     {
-                        "legend": "HER Ep 1",
-                        "CONFIG_ID": "herEp1",
-                        "style": "",
-                        "fillna": true
+                        "legend": "L2E $S^\\mathrm{bias}_{100, 1000}$",
+                        "CONFIG_ID": "220",
+                        "style": ""
+                    },
+                    {
+                        "legend": "L2E $S^\\mathrm{bias}_{10, 1000}$",
+                        "CONFIG_ID": "229",
+                        "style": ""
+                    },
+                    {
+                        "legend": "HER Fu 5",
+                        "CONFIG_ID": "221",
+                        "style": ""
                     },
                     {
                         "legend": "HER Ep 5",
-                        "CONFIG_ID": "herEp5",
+                        "CONFIG_ID": "232",
+                        "style": ""
+                    },
+                    {
+                        "legend": "Plan",
+                        "CONFIG_ID": "230",
+                        "style": ""
+                    },
+                    {
+                        "legend": "Plan + IM",
+                        "CONFIG_ID": "247",
+                        "style": ""
+                    },
+                    {
+                        "legend": "Planned Subgoals + RL",
+                        "CONFIG_ID": "251",
+                        "style": ""
+                    }
+                ],
+                "style": {
+                    "legend-loc": "best",
+                    "figsize": [5.33, 4],
+                    "x_max": 50000000
+                },
+                "save": true
+            },
+            "figure2d": {
+                "comparisons": [
+                    {
+                        "legend": "L2E",
+                        "CONFIG_ID": "249",
+                        "style": ""
+                    },
+                    {
+                        "legend": "HER",
+                        "CONFIG_ID": "250",
+                        "style": ""
+                    }
+                ],
+                "style": {
+                    "legend-loc": "best",
+                    "figsize": [5.33, 4],
+                    "ncol": 2,
+                    "x_max": 30000000
+                },
+                "save": true
+            },
+            "figure3a": {
+                "comparisons": [
+                    {
+                        "legend": "HER Ep 1",
+                        "CONFIG_ID": "127",
+                        "style": ""
+                    },
+                    {
+                        "legend": "HER Ep 5",
+                        "CONFIG_ID": "125",
                         "style": ""
                     },
                     {
                         "legend": "HER Ep 10",
-                        "CONFIG_ID": "herEp10",
-                        "style": "",
-                        "fillna": true
-                    },
-                    {
-                        "legend": "HER Fu 5",
-                        "CONFIG_ID": "herFu5",
+                        "CONFIG_ID": "128",
                         "style": ""
                     },
                     {
                         "legend": "HER Fi",
-                        "CONFIG_ID": "herFi",
+                        "CONFIG_ID": "130",
+                        "style": ""
+                    },
+                    {
+                        "legend": "HER Fu 1",
+                        "CONFIG_ID": "149",
+                        "style": ""
+                    },
+                    {
+                        "legend": "HER Fu 5",
+                        "CONFIG_ID": "129",
+                        "style": ""
+                    },
+                    {
+                        "legend": "HER Fu 10",
+                        "CONFIG_ID": "150",
                         "style": ""
                     }
                 ],
@@ -82,36 +159,36 @@
                 },
                 "save": true
             },
-            "pushing_l2e_strategies": {
+            "figure3b": {
                 "comparisons": [
                     {
                         "legend": "L2E $S^\\mathrm{bias}_{1, 1000}$",
-                        "CONFIG_ID": "l2e-1-1000",
+                        "CONFIG_ID": "134",
                         "style": ""
                     },
                     {
                         "legend": "L2E $S^\\mathrm{bias}_{10, 1000}$",
-                        "CONFIG_ID": "l2e-10-1000",
+                        "CONFIG_ID": "124",
                         "style": ""
                     },
                     {
                         "legend": "L2E $S^\\mathrm{bias}_{100, 1000}$",
-                        "CONFIG_ID": "l2e-100-1000",
+                        "CONFIG_ID": "133",
                         "style": ""
                     },
                     {
                         "legend": "L2E $S^\\mathrm{bias}_{10, 100}$",
-                        "CONFIG_ID": "l2e-10-100",
+                        "CONFIG_ID": "131",
                         "style": ""
                     },
                     {
                         "legend": "L2E $S^\\mathrm{bias}_{10, 10000}$",
-                        "CONFIG_ID": "l2e-10-10000",
+                        "CONFIG_ID": "137",
                         "style": ""
                     },
                     {
                         "legend": "L2E $S^\\mathrm{uni}_{1000}$",
-                        "CONFIG_ID": "l2e-uni-1000",
+                        "CONFIG_ID": "151",
                         "style": ""
                     }
                 ],
@@ -119,13 +196,64 @@
                     "legend-loc": "best",
                     "figsize": [5.33, 4],
                     "x_max": 6000000,
-                    "ncol": 2,
-                    "y_axis": false
+                    "ncol": 2
+                },
+                "save": true
+            },
+            "figure5a": {
+                "comparisons": [
+                    {
+                        "legend": "Analytical encoding",
+                        "CONFIG_ID": "124",
+                        "style": ""
+                    },
+                    {
+                        "legend": "VAE encoding",
+                        "CONFIG_ID": "224",
+                        "style": ""
+                    },
+                    {
+                        "legend": "No encoding",
+                        "CONFIG_ID": "223",
+                        "style": ""
+                    }
+                ],
+                "style": {
+                    "legend-loc": "best",
+                    "figsize": [5.33, 4],
+                    "ncol": 1,
+                    "x_max": 6500000
+                },
+                "save": true
+            },
+            "figure5b": {
+                "comparisons": [
+                    {
+                        "legend": "Plans contain 50 states",
+                        "CONFIG_ID": "124",
+                        "style": ""
+                    },
+                    {
+                        "legend": "Plans contain 12 states",
+                        "CONFIG_ID": "228",
+                        "style": ""
+                    },
+                    {
+                        "legend": "Plans contain 3 states",
+                        "CONFIG_ID": "231",
+                        "style": ""
+                    }
+                ],
+                "style": {
+                    "legend-loc": "best",
+                    "figsize": [5.33, 4],
+                    "ncol": 1,
+                    "x_max": 6500000
                 },
                 "save": true
             }
         }
     },
-    "save_dir": "../figs",
+    "save_dir": "figs",
     "scratch_root": "/scratch/l2e"
 }

@@ -18,6 +18,7 @@ do
     export SLURM_ARRAY_TASK_ID
     LEAST_BUSY_GPU=$(nvidia-smi --query-gpu=index,memory.used --format=csv,nounits,noheader | sort -nk2 | awk -F "," 'NR==1{print $1}')
     OUTFILE=${scratch_root}logs/$CONFIG_ID.$SLURM_ARRAY_TASK_ID.out
+    echo Running on GPU $LEAST_BUSY_GPU
     OPENBLAS_NUM_THREADS=2 OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 CUDA_VISIBLE_DEVICES=$LEAST_BUSY_GPU screen -dmS $CONFIG_ID.$SLURM_ARRAY_TASK_ID -L -Logfile $OUTFILE python $SCRIPT_ID.py
     sleep 15
 done

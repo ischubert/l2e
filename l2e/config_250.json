@@ -1,0 +1,47 @@
+{
+    "description": "2D maze world with moving obstacles: HER",
+    "scratch_root": "/scratch/ischubert/plan_conditioned_learning/",
+    "file_string_digits": 10,
+    "SCRIPT_ID": "012",
+    "AGENTS_MIN": 1,
+    "AGENTS_MAX": 10,
+    "NUM_CPU": 2,
+    "MEMORY": "50G",
+    "TIME": "336:00:00",
+    "PARTITION": "standard",
+    "GPU": "",
+    "plan_or_goal": "goal",
+    "plan_length": null,
+    "n_boxes": 3,
+    "planner_tolerance": 0.05,
+    "model_class": "SAC",
+    "max_episode_steps": 250,
+    "action_noise": {
+        "type": "NormalActionNoise",
+        "sigma": 0.1
+    },
+    "goal_selection_strategy": "future",
+    "n_sampled_goals": 5,
+    "n_sampled_goal_preselection": null,
+    "learning_starts": 5e3,
+    "policy_kwargs": {
+        "net_arch": {
+            "pi": [512, 256, 128, 64, 32],
+            "qf": [512, 256, 128, 64, 32]
+        }
+    },
+    "gamma": 0.8,
+    "use_sde": true,
+    "policy": "MlpPolicy",
+    "total_timesteps": 100000000,
+    "save_interval": 250000,
+    "pickup_checkpoint": false,
+    "EVAL_SCRIPT_ID": "992",
+    "EVAL_NUM_CPU": 2,
+    "EVAL_MEMORY": "10G",
+    "EVAL_GPU": "",
+    "EVAL_TIME": "20:00:00",
+    "EVAL_PARTITION": "standard",
+    "eval_epochs": 30,
+    "eval_deterministic": true
+}

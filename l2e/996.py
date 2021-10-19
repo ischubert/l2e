@@ -1,6 +1,6 @@
 # %%
 """
-Simple closed-loop plan execution for gym implementation
+Simple plan execution for gym implementation
 """
 import os
 import json
@@ -32,7 +32,8 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(f'PyTorch runs on device "{device}"')
 
 # %%
-assert config["shaping_mode"] is not None, "Planner is needed for evaluation of direct plan execution"
+assert config["shaping_mode"
+] is not None, "Planner is needed for evaluation of direct plan execution"
 
 # create env
 env = gym.make(
@@ -72,7 +73,7 @@ eval_filename = os.environ["SLURM_ARRAY_TASK_ID"].zfill(
 
 if os.path.isfile(os.path.join(scratch_dir, eval_filename)):
     # don't evaluate env if this has been done already
-    print(f"Evaluation has already been completed: Exit")
+    print("Evaluation has already been completed: Exit")
     exit()
 
 successes = []
@@ -86,7 +87,7 @@ for eval_epoch in range(eval_epochs):
     plan = obs['desired_goal'].reshape(env.plan_length, env.dim_plan)
 
     if config["exec_style"] == "closed_loop":
-            num_timesteps = config["max_episode_steps"]
+        num_timesteps = config["max_episode_steps"]
     elif config["exec_style"] == "open_loop":
         num_timesteps = len(plan)
     else:

@@ -44,7 +44,8 @@ else:
     original_scratch_dir = scratch_dir
 
 # %%
-assert config["shaping_mode"] is not None, "Planner is needed for evaluation of inverse model plan execution"
+assert config["shaping_mode"
+] is not None, "Planner is needed for evaluation of inverse model plan execution"
 
 # create env
 env = gym.make(
@@ -96,7 +97,8 @@ for worker_id in np.arange(original_config["n_data_collect_workers"]) + 1:
 # %%
 eval_epochs = config["eval_epochs"]
 
-for file_stop in np.arange(len(filepaths), step=original_config["file_steps"]) + original_config["file_steps"]:
+for file_stop in np.arange(len(filepaths), step=original_config["file_steps"]
+) + original_config["file_steps"]:
     filename = os.environ["SLURM_ARRAY_TASK_ID"].zfill(
         original_config["file_string_digits"]
     ) + "_" + str(file_stop * records_per_file) + '_steps'
@@ -144,7 +146,8 @@ for file_stop in np.arange(len(filepaths), step=original_config["file_steps"]) +
 
         for timestep in range(num_timesteps):
             if config["exec_style"] == "closed_loop":
-                closest_ind = np.argmin(np.linalg.norm(plan - obs['achieved_goal'][None, :], axis=-1))
+                closest_ind = np.argmin(
+                    np.linalg.norm(plan - obs['achieved_goal'][None, :], axis=-1))
                 if closest_ind+1 < len(plan):
                     desired_next_state = plan[closest_ind + 1]
                 else:
@@ -191,6 +194,5 @@ for file_stop in np.arange(len(filepaths), step=original_config["file_steps"]) +
             "final_distances": final_distances,
             "rollout_steps": rollout_steps
         }, results_file)
-    
 
 # %%
