@@ -43,7 +43,7 @@
     "n_sampled_goals": 100,
     "n_sampled_goal_preselection": 1000,
     "use_sde": true,
-    "total_timesteps": 10000000,
+    "total_timesteps": 50000000,
     "save_interval": 50000,
     "pickup_checkpoint": false,
     "goal_selection_strategy": "past_desired_success",

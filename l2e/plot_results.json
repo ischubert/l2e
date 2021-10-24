@@ -251,6 +251,22 @@
                     "x_max": 6500000
                 },
                 "save": true
+            },
+            "figure6": {
+                "comparisons": [
+                    {
+                        "legend": "L2E $S^\\mathrm{bias}_{100, 1000}$",
+                        "CONFIG_ID": "l2e_100_1000_basic",
+                        "style": ""
+                    }
+                ],
+                "style": {
+                    "legend-loc": "best",
+                    "figsize": [5.33, 4],
+                    "ncol": 2,
+                    "x_max": 30000000
+                },
+                "save": true
             }
         }
     },
